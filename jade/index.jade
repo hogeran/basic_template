@@ -1,18 +1,22 @@
 // Jade
-doctype
-html(lang="sv")
-    head
-        title sidans titel
-        meta(charset='utf-8')
-        meta(name="viewport" content="width=device-width, initial-scale=1.0")
-        meta(name="description" content="beskriver sidan")
-        link(href="css/styls.css" rel="stylesheet" type="text/css")
-    body
-        nav
-            .wrapper
-                a.header-logo-link(href="#")
-                    img.header-logo-img(alt="logga", src="logga.png")
-                span.brand-text
-                    include headertext
-        main.wrapper
-            include content
+extends docwrapper
+
+block title
+    | Sidans titel
+
+block headertext
+    | Sidans slogan
+
+block content
+    h1
+        block title
+    p lite text i en paragraf, Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, 
+
+    ul
+        li: a länk 1
+        li: a länk 2
+        li: a länk 3
+        li: a länk 4
+        li: a länk 5
+
+    p en paragraf till, Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, 
