@@ -24,6 +24,7 @@ html(lang="sv")
                 a.header-logo-link(href="#")
                     img.header-logo-img(alt="logga", src="logga.png")
                 span.brand-text
-                    block headertext
+                block headertext
+                    | #{HeaderText}
         section.wrapper
             block content

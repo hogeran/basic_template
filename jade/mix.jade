@@ -1,0 +1,44 @@
+extends docwrapper
+
+append config
+    - var PageTitle = "Lerning Jade"
+    - var jQuery = false
+    - var GoogleFonts = GoogleFonts.concat("|Poiret+One")
+    - var ThisPage = "mixins"
+    - var PageTitle = PageTitle.concat(" | " + ThisPage)
+    
+append stylesheet
+    link(href="style.css" rel="stylesheet" type="text/css")
+
+mixin navmenu(menu_items)
+    .navmenu
+        ul
+            each top_item in menu_items
+                li
+                    +navlinks(top_item)
+                    if top_item.child
+                        ul
+                            each child_item in top_item.child
+                                li
+                                    +navlinks(child_item)
+
+
+mixin navlinks(item)
+    - var linkatts = { 'href': item.link }
+    a()&attributes(linkatts)= item.title
+
+block content
+    h1(style="font-family:Poiret One") #{ThisPage}
+
+    // skriv content här
+    +navmenu([
+        {'title':'Home', 'link':'index.html'},
+        {'title':'About', 'link':'about.html',
+            child: [
+                {'title':'Child 1', 'link':'Child1.html'},
+                {'title':'Child 2', 'link':'Child2.html'},
+                {'title':'Child 3', 'link':'Child2.html'},
+            ]},
+        {'title':'Blog', 'link':'blog.html'},
+        {'title':'Contact', 'link':'contact.html'},
+    ])

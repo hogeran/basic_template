@@ -1,24 +1,25 @@
 extends docwrapper
 
 append config
-    - var PageTitle = "jQuery"
+    - var PageTitle = "Lerning Jade"
     - var jQuery = false
+    - var GoogleFonts = GoogleFonts.concat("|Poiret+One")
+    - var ThisPage = "Detta är sidans titel"
+    - var PageTitle = PageTitle.concat(" | " + ThisPage)
     
 append stylesheet
     link(href="style.css" rel="stylesheet" type="text/css")
 
-block headertext
-    | #{HeaderText}
 
 block content
-    h1 #{PageTitle}
+    h1(style="font-family:Poiret One") #{ThisPage}
 
     // skriv content här
     
     
     
     // kollar om vi har jQuery
-    h3 har vi jQuery?
+    h3(style="font-family:Wellfleet") har vi jQuery?
 
     code#gotjquery nope , ingen jQuery :(
 
