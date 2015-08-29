@@ -1,21 +1,28 @@
 extends docwrapper
 
+append config
+    - var PageTitle = "jQuery"
+    - var jQuery = false
+    
 append stylesheet
     link(href="style.css" rel="stylesheet" type="text/css")
 
 block headertext
-    | Sidans slogan
+    | #{HeaderText}
 
 block content
-    h1
-        block title
-    p lite text i en paragraf, Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, 
+    h1 #{PageTitle}
 
-    ul
-        li: a länk 1
-        li: a länk 2
-        li: a länk 3
-        li: a länk 4
-        li: a länk 5
+    // skriv content här
+    
+    
+    
+    // kollar om vi har jQuery
+    h3 har vi jQuery?
 
-    p en paragraf till, Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, 
+    code#gotjquery nope , ingen jQuery :(
+
+    script.
+        if (window.jQuery) {
+            $('#gotjquery').html("Ja vi har jQuery");
+        }

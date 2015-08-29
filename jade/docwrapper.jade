@@ -1,4 +1,5 @@
-include config
+block config
+    include config
 
 doctype
 html(lang="sv")
@@ -12,7 +13,7 @@ html(lang="sv")
         meta(name="description" content=MetaDesc)
         if GoogleFonts
             link(href='https://fonts.googleapis.com/css?family=' + GoogleFonts rel='stylesheet' type='text/css')
-        if JQuery
+        if jQuery
             script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript")
 
         block stylesheet
